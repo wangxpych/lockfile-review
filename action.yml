@@ -1,0 +1,55 @@
+name: Lockfile Review
+description: Detect unrelated pnpm lockfile changes, unexpected downgrades, and manifest drift in pull requests.
+author: wangxpych
+
+branding:
+  icon: search
+  color: blue
+
+inputs:
+  base-ref:
+    description: Base Git revision. Pull request events are detected automatically.
+    required: false
+  head-ref:
+    description: Head Git revision. Defaults to the pull request head or HEAD.
+    required: false
+  root:
+    description: Project directory relative to the repository root.
+    required: false
+    default: ""
+  manifest-path:
+    description: package.json path relative to root.
+    required: false
+    default: package.json
+  lockfile-path:
+    description: pnpm lockfile path relative to root.
+    required: false
+    default: pnpm-lock.yaml
+  expected-packages:
+    description: Comma-separated package names expected in a lockfile-only update.
+    required: false
+    default: ""
+  fail-on-unrelated:
+    description: Fail when packages outside updated dependency graphs change.
+    required: false
+    default: "true"
+  fail-on-downgrade:
+    description: Fail when the highest resolved semantic version decreases.
+    required: false
+    default: "true"
+  format:
+    description: Console output format (text, markdown, or json).
+    required: false
+    default: text
+  base-dir:
+    description: Advanced file-mode base directory, primarily for fixtures.
+    required: false
+    default: ""
+  head-dir:
+    description: Advanced file-mode head directory, primarily for fixtures.
+    required: false
+    default: ""
+
+runs:
+  using: docker
+  image: Dockerfile

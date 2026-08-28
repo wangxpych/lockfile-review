@@ -1,0 +1,6 @@
+.git
+.github
+coverage.out
+dist
+docs
+internal/review/testdata

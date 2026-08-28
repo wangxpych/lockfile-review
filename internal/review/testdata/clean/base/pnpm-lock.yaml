@@ -1,0 +1,23 @@
+lockfileVersion: '9.0'
+
+importers:
+  .:
+    dependencies:
+      alpha:
+        specifier: ^1.0.0
+        version: 1.0.0
+      helper:
+        specifier: ^1.0.0
+        version: 1.0.0
+
+packages:
+  alpha@1.0.0: {}
+  helper@1.0.0: {}
+  transitive-a@1.0.0: {}
+
+snapshots:
+  alpha@1.0.0:
+    dependencies:
+      transitive-a: 1.0.0
+  helper@1.0.0: {}
+  transitive-a@1.0.0: {}

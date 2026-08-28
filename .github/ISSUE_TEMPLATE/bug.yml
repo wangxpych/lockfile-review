@@ -1,0 +1,41 @@
+name: Bug report
+description: Report an incorrect classification or execution failure.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Please reduce private data to a minimal fixture with fictional package names.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: pnpm
+    attributes:
+      label: pnpm lockfile version
+      placeholder: "9.0"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected classification
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual classification
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal public fixture or repository
+    validations:
+      required: true
