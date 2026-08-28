@@ -12,14 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Accept a scoped dependency update
-        uses: wangxpych/lockfile-review@v0.1.0
+        uses: wangxpych/lockfile-review@v0.1.1
         with:
           base-dir: internal/review/testdata/clean/base
           head-dir: internal/review/testdata/clean/head
       - name: Reject unrelated downgrades
         id: unrelated
         continue-on-error: true
-        uses: wangxpych/lockfile-review@v0.1.0
+        uses: wangxpych/lockfile-review@v0.1.1
         with:
           base-dir: internal/review/testdata/unrelated/base
           head-dir: internal/review/testdata/unrelated/head

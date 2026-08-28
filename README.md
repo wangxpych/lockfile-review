@@ -38,10 +38,10 @@ jobs:
   lockfile-review:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: wangxpych/lockfile-review@v0.1.0
+      - uses: wangxpych/lockfile-review@v0
 ```
 
 Pull request events supply immutable base and head commits automatically. If a
@@ -51,7 +51,7 @@ The result appears in both the job log and job summary.
 For a lockfile-only security update, name its intended package explicitly:
 
 ```yaml
-      - uses: wangxpych/lockfile-review@v0.1.0
+      - uses: wangxpych/lockfile-review@v0
         with:
           expected-packages: ws
 ```
